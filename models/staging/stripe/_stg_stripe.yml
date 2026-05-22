@@ -5,23 +5,44 @@ models:
       - name: payment_id
         data_type: integer
         description: Primary key. Unique ID of payment.
+        data_tests:
+          - not_null
+          - unique
 
       - name: order_id
         data_type: integer
         description: Foreign key. ID of order related to the payment.
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_jaffle_shop__orders')
+                field: order_id
 
       - name: payment_method
         data_type: text
         description: Method that payment was made with.
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['coupon', 'credit_card', 'bank_transfer', 'gift_card']
 
       - name: payment_status
         data_type: text
         description: Status of the payment. Info if it passed or was rejected.
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['fail', 'success']
 
       - name: amount
         data_type: integer
         description: Payment value.
+          - not_null
 
       - name: created
         data_type: date
         description: When payment was made.
+          - not_null
