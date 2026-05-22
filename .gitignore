@@ -7,4 +7,5 @@ logs/
 *.code-workspace
 .venv
 
+test_query.sql
 README.md

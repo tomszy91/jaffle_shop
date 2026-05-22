@@ -1,0 +1,31 @@
+sources:
+  - name: raw_source
+    database: raw
+    schema: raw_source    
+    tables:
+      - name: stripe_payments
+        describe: Raw data about payments to orders. Each row is a one payment.
+        columns:
+          - name: id
+            data_type: integer
+            describe: Primary key. Unique ID of payment.
+
+          - name: orderid
+            data_type: integer
+            describe: Foreign key. ID of order related to the payment.
+
+          - name: paymentmethod
+            data_type: text
+            describe: Method that payment was made with.
+
+          - name: status
+            data_type: text
+            describe: Status of the payment. Info if it passed or was rejected.
+
+          - name: amount
+            data_type: integer
+            describe: Payment value.
+
+          - name: created
+            data_type: date
+            describe: When payment was made.
