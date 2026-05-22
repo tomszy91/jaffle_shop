@@ -1,0 +1,10 @@
+
+target/
+dbt_packages/
+logs/
+.env
+
+*.code-workspace
+.venv
+
+README.md
