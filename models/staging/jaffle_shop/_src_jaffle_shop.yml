@@ -1,9 +1,10 @@
 sources:
   - name: jaffle_shop
     database: raw
-    schema: raw_source            
+    schema: raw_source
     tables:
-      - name: jaffle_shop_customers
+      - name: customers
+        identifier: jaffle_shop_customers
         describe: Raw data of Jaffle Shop customers. Each row is one customer.
         columns:
           - name: id
@@ -18,7 +19,8 @@ sources:
             data_type: text
             describe: Customer last name.
 
-      - name: jaffle_shop_orders
+      - name: orders
+        identifier: jaffle_shop_orders
         describe: Raw data of Jaffle Shop orders. Each row is one order.
         columns:
           - name: id

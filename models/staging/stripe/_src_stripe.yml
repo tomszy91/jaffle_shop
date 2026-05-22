@@ -1,9 +1,10 @@
 sources:
-  - name: raw_source
+  - name: stripe
     database: raw
     schema: raw_source    
     tables:
-      - name: stripe_payments
+      - name: payments
+        identifier: stripe_payments
         describe: Raw data about payments to orders. Each row is a one payment.
         columns:
           - name: id
