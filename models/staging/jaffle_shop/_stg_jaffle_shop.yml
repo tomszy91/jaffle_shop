@@ -38,7 +38,7 @@ models:
           - not_null
           - relationships:
               arguments:
-                to: ref("stg_jaffle_shop__customers")
+                to: ref('stg_jaffle_shop__customers')
                 field: customer_id
 
       - name: order_date
@@ -50,9 +50,9 @@ models:
 
       - name: order_status
         data_type: text
-        description: {{ doc("order_status") }}
+        description: "{{ doc('order_status') }}" 
         data_tests:
           - not_null
           - accepted_values:
               arguments:
-                values: ["return_pending", "returned", "completed", "placed", "shipped"]
+                values: ['return_pending', 'returned', 'completed', 'placed', 'shipped']
