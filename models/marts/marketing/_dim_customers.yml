@@ -1,0 +1,31 @@
+models:
+  - name: dim_customers
+    description: Model combines data from customers with orders data. Each row is a single customer.
+    columns:
+      - name: customer_id
+        data_type: integer
+        description: Primary key. Unique ID of customer.
+
+      - name: first_name
+        data_type: text
+        description: Customer first name.
+
+      - name: last_name
+        data_type: text
+        description: Customer last name.
+
+      - name: first_order_date
+        data_type: date
+        description: When customer made a first order. If NULL, customer never did make an order.
+
+      - name: last_order_date
+        data_type: date
+        description: When customer made a last order. If NULL, customer never did make an order.
+
+      - name: total_orders
+        data_type: bigint
+        description: Total amount of all orders made by customer. If 0, customer never did make an order.
+
+      - name: total_orders_value
+        data_type: numeric
+        description: Total value of orders made by customer. If NULL, customer never did make an order.

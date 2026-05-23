@@ -37,3 +37,8 @@ models:
         +materialized: view
       stripe:
         +materialized: view
+    marts:
+      finance:
+        +materialized: table
+      marketing:
+        +materialized: table

@@ -1,0 +1,19 @@
+models:
+  - name: fct_orders
+    description: Model that composes data from orders and payments. Each row is a single order and payment amount
+    columns:
+      - name: order_id
+        data_type: integer
+        description: Primary key. Unique ID of the order.
+
+      - name: customer_id
+        data_type: integer
+        description: Foreign key. Unique ID of the customer who made the order.
+
+      - name: order_date
+        data_type: date
+        description: Date when order was made.
+
+      - name: amount
+        data_type: bigint
+        description: Order payment amount. If equals 0, it means that there is no successed payment.
