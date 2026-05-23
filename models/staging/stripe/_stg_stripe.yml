@@ -21,7 +21,7 @@ models:
 
       - name: payment_method
         data_type: text
-        description: Method that payment was made with.
+        description: {{ doc("payment_method")}}
         data_tests:
           - not_null
           - accepted_values:
@@ -30,7 +30,7 @@ models:
 
       - name: payment_status
         data_type: text
-        description: Status of the payment. Info if it passed or was rejected.
+        description: {{ doc("payment_status")}}
         data_tests:
           - not_null
           - accepted_values:
