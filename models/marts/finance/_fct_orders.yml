@@ -1,6 +1,6 @@
 models:
   - name: fct_orders
-    description: Model that composes data from orders and payments. Each row is a single order and payment amount
+    description: Model that composes data from orders and payments. One row is a single order and payment amount
     columns:
       - name: order_id
         data_type: integer
@@ -23,7 +23,7 @@ models:
         data_type: date
         description: Date when order was made.
         data_tests:
-          - correct_date
+          - not_before_date
 
       - name: amount
         data_type: bigint

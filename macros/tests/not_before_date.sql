@@ -1,4 +1,4 @@
-{% test correct_date(model, column_name) %}
+{% test not_before_date(model, column_name) %}
 
 select *
 from {{ model }}

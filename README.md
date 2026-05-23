@@ -25,6 +25,9 @@ The project replicates a cloud-like data warehouse environment using localized, 
 * **Data Transformation:** `dbt-core` (version `1.10.8` for syntax stability).
 * **Database:** `PostgreSQL 16` running inside a **Docker** container (simulating a cloud data warehouse).
 * **Development Environment:** VS Code with custom extensions to handle Jinja SQL and YAML configurations.
+* **Project Lineage**:
+
+![image](png/lineage.png)
 
 ---
 

@@ -48,4 +48,4 @@ models:
         data_type: date
         description: When payment was made.
           - not_null
-          - correct_date
+          - not_before_date

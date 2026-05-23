@@ -46,7 +46,7 @@ models:
         description: When order was made.
         data_tests:
           - not_null
-          - correct_date
+          - not_before_date
 
       - name: order_status
         data_type: text

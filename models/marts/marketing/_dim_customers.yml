@@ -21,13 +21,13 @@ models:
         data_type: date
         description: When customer made a first order. If NULL, customer never did make an order.
         data_tests:
-          - correct_date
+          - not_before_date
 
       - name: last_order_date
         data_type: date
         description: When customer made a last order. If NULL, customer never did make an order.
         data_tests:
-          - correct_date
+          - not_before_date
 
       - name: total_orders
         data_type: bigint
