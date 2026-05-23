@@ -16,7 +16,7 @@ models:
           - not_null
           - relationships:
               arguments:
-                to: ref('stg_jaffle_shop__orders')
+                to: ref("stg_jaffle_shop__orders")
                 field: order_id
 
       - name: payment_method
@@ -26,7 +26,7 @@ models:
           - not_null
           - accepted_values:
               arguments:
-                values: ['coupon', 'credit_card', 'bank_transfer', 'gift_card']
+                values: ["coupon", "credit_card", "bank_transfer", "gift_card"]
 
       - name: payment_status
         data_type: text
@@ -35,14 +35,17 @@ models:
           - not_null
           - accepted_values:
               arguments:
-                values: ['fail', 'success']
+                values: ["fail", "success"]
 
       - name: amount
         data_type: integer
         description: Payment value.
+        data_tests:
           - not_null
+          - not_negative
 
       - name: created
         data_type: date
         description: When payment was made.
           - not_null
+          - correct_date
