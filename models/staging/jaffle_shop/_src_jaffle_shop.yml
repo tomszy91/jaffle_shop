@@ -1,40 +1,47 @@
 sources:
   - name: jaffle_shop
+    description: Copy of Jaffle Shop tables. It consist of two tables - customers and orders.
     database: raw
     schema: raw_source
     tables:
       - name: customers
         identifier: jaffle_shop_customers
-        describe: Raw data of Jaffle Shop customers. Each row is one customer.
+        description: Raw data of Jaffle Shop customers. Each row is one customer.
         columns:
           - name: id
             data_type: integer
-            describe: Primary key. Unique ID of customer.
+            description: Primary key. Unique ID of customer.
             
           - name: first_name
             data_type: text
-            describe: Customer first name.
+            description: Customer first name.
 
           - name: last_name
             data_type: text
-            describe: Customer last name.
+            description: Customer last name.
 
       - name: orders
         identifier: jaffle_shop_orders
-        describe: Raw data of Jaffle Shop orders. Each row is one order.
+        description: Raw data of Jaffle Shop orders. Each row is one order.
+        config:
+          freshness:
+            error_after:
+              count: 3650
+              period: day
+        loaded_at_field: 'cast("ORDER_DATE" as timestamp)'
         columns:
           - name: id
             data_type: integer
-            describe: Primary key. Unique ID of the order.
+            description: Primary key. Unique ID of the order.
 
           - name: user_id
             data_type: integer
-            describe: Foreign key. ID of customer who made the order.
+            description: Foreign key. ID of customer who made the order.
 
           - name: order_date
             data_type: date
-            describe: When order was made.
+            description: When order was made.
 
           - name: status
             data_type: text
-            describe: Current status of the order.
+            description: Current status of the order.

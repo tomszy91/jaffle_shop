@@ -6,15 +6,18 @@
 [![Docker](https://img.shields.io/badge/Docker-Container-blue.svg)](https://www.docker.com/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-This is a training and proof-of-concept project. The main goal was to get hands-on experience with the **dbt (Data Build Tool)** ecosystem and understand how modern Analytics Engineering solves real-world bottlenecks between business and technology.
+This project was created to better understand modern analytics engineering workflows built around dbt.
 
-## Why Analytics Engineering?
+While the same transformations could technically be implemented directly in a warehouse such as Snowflake or PostgreSQL, dbt provides critical engineering capabilities around:
 
-Working on this repository made it clear to me that the Analytics Engineer role is the missing link in data teams:
+* dependency management
+* modular SQL transformations
+* automated testing
+* documentation
+* lineage visualization
+* reusable data quality patterns
 
-* **Unblocking Data Engineers:** Platform engineers can focus on core architecture and moving raw data to the warehouse (ingestion). They stop being a bottleneck for analysts who are constantly waiting for a "table fix."
-* **Empowering Data Analysts:** Analysts get clean, tested, and fully documented models that act as a Single Source of Truth. They can focus on the core of their job – driving insights and business value – instead of wasting time manually cleaning data inside BI tools.
-* **Software Engineering Best Practices:** dbt brings software development rigor to analytics – including version control (Git), automated testing, and modular code.
+The goal of this project was to practice treating analytics transformations as maintainable software rather than isolated SQL scripts.
 
 ---
 
@@ -27,7 +30,7 @@ The project replicates a cloud-like data warehouse environment using localized, 
 * **Development Environment:** VS Code with custom extensions to handle Jinja SQL and YAML configurations.
 * **Project Lineage**:
 
-![image](png/lineage.png)
+   ![image](png/lineage.png)
 
 ---
 
@@ -41,6 +44,10 @@ The project replicates a cloud-like data warehouse environment using localized, 
     * Created reusable custom generic tests for business rule validation (e.g., ensuring numeric amounts are never negative).
 
 4. **Project Configuration:** Fully resolved compiler warnings (`dbt parse`), properly isolated the environment via `.gitignore`, and streamlined model materializations in `dbt_project.yml`.
+
+5. **Documentation:**
+
+   ![image](png/docs_example.png)
 
 ---
 
