@@ -35,7 +35,7 @@ The project replicates a cloud-like data warehouse environment using localized, 
 3. **Automated Testing:**
 
     * Implemented built-in generic tests (`unique`, `not_null`, `accepted_values`, `relationships` using the updated dbt 1.10+ syntax).
-    * Created custom **Singular Tests** to validate business logic (e.g., payment amounts per order are never negative).
+    * Created reusable custom generic tests for business rule validation (e.g., ensuring numeric amounts are never negative).
 
 4. **Project Configuration:** Fully resolved compiler warnings (`dbt parse`), properly isolated the environment via `.gitignore`, and streamlined model materializations in `dbt_project.yml`.
 
