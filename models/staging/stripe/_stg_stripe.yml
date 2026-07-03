@@ -1,5 +1,5 @@
 models:
-  - name: stg_stripe__payments
+  - name: stg_stripe__payment
     description: Model that cleans Stripe Payments data in Jaffle Shop. Cleans column names.
     columns:
       - name: payment_id

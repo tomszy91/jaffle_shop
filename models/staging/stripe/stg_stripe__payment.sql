@@ -1,5 +1,5 @@
 with source as (
-        select * from {{ source("stripe", "payments") }}
+        select * from {{ source("stripe", "payment") }}
   ),
   renamed as (
       select
@@ -7,7 +7,7 @@ with source as (
         {{ adapter.quote("ORDERID") }} as order_id,
         {{ adapter.quote("PAYMENTMETHOD") }} as payment_method,
         {{ adapter.quote("STATUS") }} as payment_status,
-        {{ adapter.quote("AMOUNT") }} as amount,
+        {{ cents_to_dollars("AMOUNT", 4) }} as amount,
         {{ adapter.quote("CREATED") }} as created
 
       from source
