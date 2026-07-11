@@ -8,3 +8,4 @@ logs/
 .venv
 
 test_query.sql
+dbt_internal_packages/

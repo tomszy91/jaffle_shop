@@ -1,16 +1,17 @@
 sources:
   - name: jaffle_shop
     description: Copy of Jaffle Shop tables. It consist of two tables - customers and orders.
-    database: jaffle_shop
+    database: dbt-learn-501412
     schema: raw
     tables:
       - name: customers
+        identifier: jaffle_shop_customers
         description: Raw data of Jaffle Shop customers. Each row is one customer.
         columns:
           - name: id
             data_type: integer
             description: Primary key. Unique ID of customer.
-            
+
           - name: first_name
             data_type: text
             description: Customer first name.
@@ -20,13 +21,14 @@ sources:
             description: Customer last name.
 
       - name: orders
+        identifier: jaffle_shop_orders
         description: Raw data of Jaffle Shop orders. Each row is one order.
         config:
           freshness:
             error_after:
               count: 3650
               period: day
-        loaded_at_field: 'cast("ORDER_DATE" as timestamp)'
+          loaded_at_field: 'cast("ORDER_DATE" as timestamp)'
         columns:
           - name: id
             data_type: integer

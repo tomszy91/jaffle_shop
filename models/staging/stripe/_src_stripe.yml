@@ -1,10 +1,11 @@
 sources:
   - name: stripe
     description: Copy of Stripe. It consist of one table - payments.
-    database: stripe
+    database: dbt-learn-501412
     schema: raw    
     tables:
       - name: payment
+        identifier: stripe_payments
         description: Raw data about payments to orders. Each row is a one payment.
         columns:
           - name: id
