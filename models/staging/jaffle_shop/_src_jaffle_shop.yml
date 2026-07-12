@@ -1,11 +1,10 @@
 sources:
   - name: jaffle_shop
     description: Copy of Jaffle Shop tables. It consist of two tables - customers and orders.
-    database: dbt-learn-501412
+    database: nimble-yen-502210-j0
     schema: raw
     tables:
       - name: customers
-        identifier: jaffle_shop_customers
         description: Raw data of Jaffle Shop customers. Each row is one customer.
         columns:
           - name: id
@@ -21,7 +20,6 @@ sources:
             description: Customer last name.
 
       - name: orders
-        identifier: jaffle_shop_orders
         description: Raw data of Jaffle Shop orders. Each row is one order.
         config:
           freshness:

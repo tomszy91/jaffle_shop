@@ -33,10 +33,14 @@ models:
     staging:
       jaffle_shop:
         +materialized: view
+        +database: nimble-yen-502210-j0
       stripe:
         +materialized: view
+        +database: stripe-502210
     marts:
       finance:
         +materialized: table
+        +database: jaffle-shop-reporting
       marketing:
         +materialized: table
+        +database: jaffle-shop-reporting
